@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+    <datasource enabled="true" jndi-name="jdbc/ApiManagerDS" pool-name="ApiManagerDS" use-java-context="true">
+        <connection-url>jdbc:postgresql://${env.POSTGRES_PORT_5432_TCP_ADDR}:${env.POSTGRES_PORT_5432_TCP_PORT:5432}/${env.POSTGRES_ENV_POSTGRES_DB:ApiManagerDS}</connection-url>
+        <driver>postgresql</driver>
+        <pool>
+            <max-pool-size>30</max-pool-size>
+        </pool>
+        <security>
+            <user-name>${env.POSTGRES_ENV_POSTGRES_USER:apiman}</user-name>
+            <password>${env.POSTGRES_ENV_POSTGRES_PASSWORD:apiman}</password>
+        </security>
+    </datasource>
+</datasources>
