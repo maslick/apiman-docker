@@ -10,14 +10,16 @@ RUN cd $JBOSS_HOME \
 
 
 # Add default user
-FROM jboss/apiman-wildfly  
 RUN /opt/jboss/wildfly/bin/add-user.sh admin admin --silent
+
 
 # Apiman properties
 ADD apiman.properties /opt/jboss/wildfly/standalone/configuration/
 
+
 # SSL
 ADD apiman_gateway.jks /opt/jboss/wildfly/standalone/configuration/
+
 
 # Postgres
 ENV DB_CONNECTOR_VERSION 9.4-1201-jdbc41
@@ -25,12 +27,13 @@ RUN rm /opt/jboss/wildfly/standalone/deployments/apiman-ds.xml
 RUN mkdir -p /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/jdbc/main; cd /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/jdbc/main; curl -O http://central.maven.org/maven2/org/postgresql/postgresql/$DB_CONNECTOR_VERSION/postgresql-$DB_CONNECTOR_VERSION.jar
 ADD module.xml /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/jdbc/main/
 
+
 # Add standalone-apiman.xml
 ADD standalone-apiman.xml /opt/jboss/wildfly/standalone/configuration/
+
 
 # Default wildfly debug port  
 EXPOSE 8787
 
 USER root
-
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0", "-c", "standalone-apiman.xml", "--debug"]

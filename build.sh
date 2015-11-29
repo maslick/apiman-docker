@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --tag=jboss/apiman-wildfly-admin .  
+docker build --tag=jboss/apiman-wildfly-admin .
