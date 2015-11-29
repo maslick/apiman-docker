@@ -36,11 +36,12 @@ https://{your_host}/apimanui
  Username: apimanager
  Password: apiman123!
  ```
+ - Import policies. Go to ``System Administration -> Manage Policy Definitions``and use this [json](https://raw.githubusercontent.com/apiman/apiman/master/distro/data/src/main/resources/data/all-policyDefs.json)
  - Add admin role. Click on ``Manage Roles/Permissions`` and then ``New role``.
- - Add new Organization
- - Add new Plan
- - Add new Service
- - Add new Application
+ - Create new Organization
+ - Create new Plan
+ - Create new Service
+ - Create new Application
 
 The API service will be available at:
 ```
