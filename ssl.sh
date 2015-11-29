@@ -1,5 +1,10 @@
 #!/bin/bash
 
+##############################
+## Usage:
+##  $ ./ssl.sh mysite.com
+##############################
+
 rm -f apiman_gateway.jks
 
 function genkey {
@@ -13,4 +18,4 @@ function genkey {
     -validity 10950
 }
 
-genkey apiman.maslick.com
+genkey $1
