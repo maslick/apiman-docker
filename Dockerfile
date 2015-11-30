@@ -32,6 +32,10 @@ ADD module.xml /opt/jboss/wildfly/modules/system/layers/base/org/postgresql/jdbc
 ADD standalone-apiman.xml /opt/jboss/wildfly/standalone/configuration/
 
 
+# Disable builtin Elasticsearch
+RUN rm -f /opt/jboss/wildfly/standalone/deployments/apiman-es*
+
+
 # Default wildfly debug port  
 EXPOSE 8787
 
