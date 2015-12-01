@@ -13,6 +13,35 @@
 
 
 #### 2. Installation
+Edit ``docker-compose.yml`` according to your needs:
+```
+db:
+    image: postgres
+    environment:
+        - POSTGRES_DB=ApiManagerDS
+        - POSTGRES_USER=apiman
+        - POSTGRES_PASSWORD=apiman
+        - POSTGRES_ROOT_PASSWORD=apiman
+
+elastic:
+    image: elasticsearch
+
+apiman:
+    image: jboss/apiman-wildfly-admin
+    environment:
+        - GATEWAY_ADDRESS=https://localhost/apiman-gateway
+    links:
+        - db:postgres
+        - elastic:es
+    ports:
+        - "8089:8080"
+        - "9999:9990"
+        - "443:443"
+        - "8787:8787"
+
+```
+
+
  ```
  $ ./ssl.sh google.com
  $ ./build.sh
