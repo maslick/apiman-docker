@@ -50,7 +50,7 @@ apiman:
  This will:
 - Generate a self-signed ssl certificate and deploy it to the keystore (see ``ssl.sh`` for more details)
 - Build the docker image
-- Run postgres and apiman using ``docker-compose``
+- Run postgres, elastic search and apiman using ``docker-compose``
  
 #### 3. Run
  - Go to Apiman UI:
