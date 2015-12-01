@@ -48,7 +48,7 @@ apiman:
  $ ./run.sh
  ```
  This will:
-- Generate a self-signed ssl certificate and deploy it to the keystore (see ``ssl.sh`` for more details)
+- Generate a self-signed ssl certificate and deploy it to the java keystore (see ``ssl.sh`` for more details)
 - Build the docker image
 - Run postgres, elastic search and apiman using ``docker-compose``
  
