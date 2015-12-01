@@ -1,6 +1,6 @@
 =apiman-docker=
 ======
- - Docker image for the Apiman ``1.1.9 Final``
+ - Docker image for Apiman ``1.1.9 Final``
  - This image comes with an external **postgres** database (instead of the native **h2**)
  - SSL/TLS is supported, so **Apiman** can be easily deployed to the cloud (EC2, Azure, etc.)
  - Elasticsearch running as a standalone service (container)
