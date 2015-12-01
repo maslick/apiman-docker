@@ -30,7 +30,7 @@ elastic:
 apiman:
     image: jboss/apiman-wildfly-admin
     environment:
-        - GATEWAY_ADDRESS=https://localhost/apiman-gateway
+        - GATEWAY_ADDRESS=https://{your_host}/apiman-gateway
     links:
         - db:postgres
         - elastic:es
@@ -43,7 +43,7 @@ apiman:
 
 
  ```
- $ ./ssl.sh google.com
+ $ ./ssl.sh {your_host}
  $ ./build.sh
  $ ./run.sh
  ```
@@ -76,3 +76,5 @@ The API service will be available at:
 ```
 https://{your_host}/apiman-gateway/{Organization}/{Service}/{version}?apikey={X-API-Key}
 ```
+
+For local testing change ``{your_host}`` to ``localhost``
